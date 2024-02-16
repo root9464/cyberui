@@ -1,0 +1,35 @@
+//light
+$color-theme-light: #F5F5F7
+$color-theme-light-text: #080808
+
+    
+
+
+
+.button
+    all: unset
+    cursor: pointer
+    padding: 8px 16px 
+    border-radius: 6px
+    max-width: fit-content
+    min-width: fit-content
+    text-align: center
+    font-size: 16px
+    line-height: 24px
+    font-weight: 500
+    position: relative
+
+    &.light
+        color: $color-theme-light-text
+        &.primary
+            background-color: $color-theme-light
+
+        &.default
+            background-color: $color-theme-light
+    &:hover
+        opacity: 0.95
+        background-color: #f3f3f5
+    &:active
+        opacity: 0.90
+        transform: scale(0.98)
+        transition: transform 0.2s ease
