@@ -4,7 +4,21 @@ export default function Buttons() {
 	return (
 		<div className={styles.div}>
 			<p>buttons</p>
-			<Button theme='light' variant='default' text='Primary' />
+			<div className={styles.boxButtons}>
+				<div className={styles.btns}>
+					<p>Light Theme</p>
+					<Button {...{theme: 'light', variant: 'default', text: 'CyberUI'}} />
+					<Button {...{theme: 'light', variant: 'bordered', text: 'CyberUI'}} />
+					<Button {...{theme: 'light', variant: 'flat', text: 'CyberUI'}} />
+					<Button {...{theme: 'light', variant: 'outline', text: 'CyberUI'}} />
+					<Button {...{theme: 'light', variant: 'ghost', text: 'CyberUI'}} />
+				</div>
+
+				<div className={styles.btns}>
+					<p>Dark Theme</p>
+					<Button theme='light' variant='default' text='CyberUI' />
+				</div>
+			</div>
 
 		</div>
 	);

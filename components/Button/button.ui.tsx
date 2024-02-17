@@ -9,15 +9,44 @@ export const Button = ({theme, variant, text, ...props}: ButtonProps) => {
 		case 'light':
 			className += ` ${styles.light}`;
 			switch (variant) {
-				case 'primary':
-					className += ` ${styles.primary}`;
+				case 'bordered':
+					className += ` ${styles.bordered}`;
 					break;
-
+				case 'flat':
+					className += ` ${styles.flat}`;
+					break;
+				case 'outline':
+					className += ` ${styles.outline}`;
+					break;
+				case 'ghost':
+					className += ` ${styles.ghost}`;
+					break;
 				default:
 					className += ` ${styles.default}`;
 			}
 
 			break;
+		case 'dark':
+			className += ` ${styles.dark}`;
+			switch (variant) {
+				case 'bordered':
+					className += ` ${styles.bordered}`;
+					break;
+				case 'flat':
+					className += ` ${styles.flat}`;
+					break;
+				case 'outline':
+					className += ` ${styles.outline}`;
+					break;
+				case 'ghost':
+					className += ` ${styles.ghost}`;
+					break;
+				default:
+					className += ` ${styles.default}`;
+			}
+
+			break;
+
 		default:
 			break;
 	}
