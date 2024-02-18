@@ -1,13 +1,4 @@
-//light
-$color-theme-light: #F5F5F7
-$color-theme-light-text: #080808
-$color-theme-light-border: #D3D3D3   
-$color-theme-light-flat: #cccccc 
-//dark
-
-$color-theme-dark: #080808
-$color-theme-dark-text: #F5F5F7
-
+@import '../../sass/globals.variables.sass'
 .button
     all: unset
     cursor: pointer
@@ -28,9 +19,11 @@ $color-theme-dark-text: #F5F5F7
         &.bordered
             background-color: $color-theme-light
             border: 2px solid $color-theme-light-border
+            
         &.flat
             background-color: $color-theme-light-flat
             opacity: 0.8
+
         &.outline
             background-color: rgba(255, 255, 255, 0)
             border: 2px solid $color-theme-light
@@ -38,17 +31,16 @@ $color-theme-dark-text: #F5F5F7
             &:hover
                 background-color: $color-theme-light
                 color: $color-theme-light-text
+
         &.ghost
             background: rgba(255, 255, 255, 0)
             color: $color-theme-light
             &:hover
                 background-color: #963A8D
 
-             
-
+    
         &.default
             background-color: $color-theme-light
-
 
         &:hover
             opacity: 0.95
@@ -57,9 +49,40 @@ $color-theme-dark-text: #F5F5F7
 
     &.dark 
         color: $color-theme-dark-text
+        &.deep
+            background-color: $color-theme-dark-deep
+
+        &.deepBordered
+            background-color: $color-theme-dark-deep
+            border: 2px solid $color-theme-dark-deepBorder
+
+        &.bordered
+            background-color: $color-theme-dark
+            border: 2px solid $color-theme-dark-border
+
+        &.flat
+            background-color: $color-theme-dark-flat
+            opacity: 0.8
+
+        &.outline
+            background-color: rgba(255, 255, 255, 0)
+            border: 2px solid $color-theme-dark
+            color: $color-theme-dark
+            &:hover
+                background-color: $color-theme-dark
+                color: $color-theme-dark-text
+
+        &.ghost
+            background: rgba(255, 255, 255, 0)
+            color: $color-theme-dark
+            &:hover
+                background-color: $color-theme-dark-ghost
+                color: $color-theme-dark-text
+
+
         &.default
             background-color: $color-theme-dark
     
         &:hover
             opacity: 0.95
-            background-color: #1e1e1e
+            background-color: #282828

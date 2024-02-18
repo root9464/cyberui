@@ -29,9 +29,16 @@ export const Button = memo(
 				}
 
 				break;
+
 			case 'dark':
 				className += ` ${styles.dark}`;
 				switch (variant) {
+					case 'deep':
+						className += ` ${styles.deep}`;
+						break;
+					case 'deep-bordered':
+						className += ` ${styles.deepBordered}`;
+						break;
 					case 'bordered':
 						className += ` ${styles.bordered}`;
 						break;
