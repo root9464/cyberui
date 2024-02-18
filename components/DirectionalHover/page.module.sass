@@ -1,0 +1,67 @@
+.main
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  border-radius: 10px
+  position: absolute 
+
+  .block
+    overflow: hidden
+    position: relative
+    min-height: 500px
+    min-width: 500px
+    max-width: 800px
+    max-height: 800px
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-end
+    z-index: 1
+    .card
+      position: absolute
+      width: 100%
+      height: 100%
+      z-index: 6
+      inset: 0
+      border-radius: 10px
+      transition: all 0.5s
+
+      &:hover
+        background-color: rgba(0, 0, 0, 0.4)
+    
+    .boximg
+      position: absolute
+      display: flex
+      inset: 0
+      justify-content: center
+      align-items: center
+      background-color: blue
+      border-radius: 10px
+      z-index: 5
+      transition: all 0.5s
+      .img
+        position: relative
+        // top: 70px
+        width: calc( 100% + 200px )
+        height: calc( 100% + 200px )
+        border-radius: 10px
+        object-fit: cover
+        transition: all 0.5s
+ 
+        &:hover
+          .img
+            transform: scale(1)
+    
+    .text
+      position: relative
+      bottom: 30px
+      width: 100%
+      left: 30px
+      bottom: 30px
+      min-height: min-content
+      max-height: fit-content
+      z-index: 7
+
+  
