@@ -1,4 +1,4 @@
-'use client';
+
 import {Button} from '@/components/Button/button.ui';
 import styles from './page.module.sass';
 export default function Buttons() {
