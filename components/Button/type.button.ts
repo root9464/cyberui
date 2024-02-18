@@ -1,5 +1,6 @@
 export type ButtonProps = {
 	theme: string;
 	variant?: string;
-	text: string;
+	text: string | number;
+	onClick?: () => void;
 };
