@@ -8,7 +8,7 @@ import Image from 'next/image';
 import {
 	type MouseEventWithElement, type Direction, type Params, type EventMouse, type Variants,
 } from './type.dh';
-export const DirectionAwareHover = ({children, url}: Params) => {
+export const DirectionAwareHover = ({children, url}: Params): JSX.Element => {
 	const ref = useRef<HTMLDivElement>(null);
 	const [direction, setDirection] = useState<Direction>('left');
 	const handleMouseEnter = (event: EventMouse) => {
@@ -52,7 +52,7 @@ export const DirectionAwareHover = ({children, url}: Params) => {
 
 					<motion.div className={styles.card} />
 					<motion.div className={styles.boximg} variants={variants} transition={{duration: 0.2, ease: 'easeOut'}}>
-						<Image src={url} className={styles.img} alt='logo'/>
+						{url ? <Image src={url} alt='image'/> : null}
 					</motion.div>
 
 					<motion.div variants={textVariants} transition={{duration: 0.5, ease: 'easeOut'}} className={styles.text}>

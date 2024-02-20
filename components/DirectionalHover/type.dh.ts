@@ -5,7 +5,7 @@
 import {type StaticImageData} from 'next/image';
 import {type MouseEvent} from 'react';
 export type Params = {
-	url: StaticImageData | string;
+	url?: StaticImageData | string;
 	children: React.ReactNode | string;
 };
 export type Direction = 'top' | 'bottom' | 'left' | 'right' | string;

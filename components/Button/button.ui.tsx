@@ -1,11 +1,13 @@
+
 /* eslint-disable react/display-name */
 
 'use client';
 import {type ButtonProps} from './type.button';
 import styles from './button.module.sass';
 import {memo} from 'react';
+
 export const Button = memo(
-	({theme, variant, text, onClick, ...props}: ButtonProps) => {
+	({theme, variant, text, onClick, ...props}: ButtonProps): JSX.Element => {
 		let className = styles.button;
 
 		switch (theme) {
@@ -67,3 +69,4 @@ export const Button = memo(
 			</button>
 		);
 	});
+

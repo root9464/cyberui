@@ -1,6 +1,11 @@
 
 import {Button} from '@/components/Button/button.ui';
 import styles from './page.module.sass';
+import type {Metadata} from 'next';
+
+export const metadata: Metadata = {
+	title: 'CyberUI - Buttons',
+};
 export default function Buttons() {
 	return (
 		<div className={styles.div}>
