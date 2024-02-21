@@ -6,7 +6,7 @@ import {type Metadata} from 'next';
 export const metadata: Metadata = {
 	title: 'CyberUI - DirectionalHover',
 };
-export default function DirectionalHover() {
+export default function DirectionalHoverPage() {
 	return (
 		<div className={styles.container}>
 			<DirectionAwareHover>

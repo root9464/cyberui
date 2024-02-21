@@ -6,7 +6,7 @@ import type {Metadata} from 'next';
 export const metadata: Metadata = {
 	title: 'CyberUI - Buttons',
 };
-export default function Buttons() {
+export default function ButtonsPage() {
 	return (
 		<div className={styles.div}>
 			<p>buttons</p>
