@@ -1,5 +1,6 @@
-@import '../../sass/globals.variables'
-    
+@import '../../sass/globals.variables.sass'
+@import '../Button/button.module'
+@import '../../sass/mixins.sass'
 .nav
     display: flex
     flex-direction: column
@@ -14,27 +15,13 @@
     width: 400px
     height: 400px
     background-color: red
-    .button
-        all: unset
-        background-color: $color-theme-dark
-        color: $color-theme-dark-text
-        padding: 8px 16px
-        border-radius: 6px
-        max-width: 200px
-        min-width: 100px
-        max-height: max-content
-        min-height: min-content
-        cursor: pointer
+    .arrow
         display: flex
-        flex-direction: row
-        justify-content: space-between
+        justify-content: center
         align-items: center
-        .arrow
-            // background-color: red
-            display: flex
-            justify-content: center
-            align-items: center
         
+        > .staticArrow
+            transform: rotate(180deg) /* Counter-rotate the arrow to make it static */
     .menu
         max-width: 300px
         min-width: 200px
@@ -42,7 +29,7 @@
         min-height: min-content
         background-color: $color-theme-dark
         color: $color-theme-dark-text
-        padding: 10px 20px
+        padding: 15px 20px
         сursor: pointer
         border-radius: 3px
         list-style-type: none
@@ -50,3 +37,20 @@
         display: flex
         gap: 6px
         flex-direction: column
+           
+        @include ThemeStyles(false)
+
+        .item
+            padding: 6px 10px
+            border-radius: 3px
+            transition: background-color 0.3s ease
+
+            &.dark 
+                 &:hover
+                    opacity: 0.95
+                    background-color: #282828
+
+            &.light
+                 &:hover
+                    opacity: 0.95
+                    background-color: #EAEAEA

@@ -1,0 +1,63 @@
+@import './globals.variables.sass'
+@mixin ThemeStyles($hover: true)
+  &.light
+    color: $color-theme-light-text
+    &.bordered
+      background-color: $color-theme-light
+      border: 2px solid $color-theme-light-border
+    &.flat
+      background-color: $color-theme-light-flat
+      opacity: 0.8
+    &.outline
+      background-color: rgba(255, 255, 255, 0)
+      border: 2px solid $color-theme-light
+      color: $color-theme-light
+      &:hover
+        background-color: $color-theme-light
+        color: $color-theme-light-text
+    &.ghost
+      background: rgba(255, 255, 255, 0)
+      color: $color-theme-light
+      &:hover
+        background-color: #963A8D
+    &.default
+      background-color: $color-theme-light
+    @if $hover == true
+      &:hover
+        opacity: 0.95
+        background-color: #EAEAEA
+
+
+  &.dark
+    color: $color-theme-dark-text
+    &.deep
+      background-color: $color-theme-dark-deep
+    &.deepBordered
+      background-color: $color-theme-dark-deep
+      border: 2px solid $color-theme-dark-deepBorder
+    &.bordered
+      background-color: $color-theme-dark
+      border: 2px solid $color-theme-dark-border
+    &.flat
+      background-color: $color-theme-dark-flat
+      opacity: 0.8
+    &.outline
+      background-color: rgba(255, 255, 255, 0)
+      border: 2px solid $color-theme-dark
+      color: $color-theme-dark
+      &:hover
+        background-color: $color-theme-dark
+        color: $color-theme-dark-text
+    &.ghost
+      background: rgba(255, 255, 255, 0)
+      color: $color-theme-dark
+      &:hover
+        background-color: $color-theme-dark-ghost
+        color: $color-theme-dark-text
+    &.default
+      background-color: $color-theme-dark
+    
+    @if $hover == true
+      &:hover
+        opacity: 0.95
+        background-color: #282828
