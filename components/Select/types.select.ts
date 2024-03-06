@@ -5,6 +5,8 @@ export type PropsUl = {
 	isOpen: boolean;
 	setIsOpen: (isOpen: boolean) => void;
 	setSelected: (selected: string) => void;
+	theme: string;
+	variant?: string;
 	content: string[];
 };
 

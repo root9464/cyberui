@@ -92,7 +92,7 @@ export const Select = ({theme, variant, content}: PropsSelect) => {
 
 			</motion.button>
 			<SelectUl {...{
-				itemVariants, isOpen, setIsOpen, setSelected, content,
+				itemVariants, isOpen, setIsOpen, setSelected, content, theme, variant,
 			}}/>
 		</motion.nav>
 	);
