@@ -1,5 +1,5 @@
-@import '../../sass/globals.variables'
-    
+@import '../../sass/globals.variables.sass'
+@import '../Button/button.module'
 .nav
     display: flex
     flex-direction: column
@@ -14,27 +14,13 @@
     width: 400px
     height: 400px
     background-color: red
-    .button
-        all: unset
-        background-color: $color-theme-dark
-        color: $color-theme-dark-text
-        padding: 8px 16px
-        border-radius: 6px
-        max-width: 200px
-        min-width: 100px
-        max-height: max-content
-        min-height: min-content
-        cursor: pointer
+    .arrow
         display: flex
-        flex-direction: row
-        justify-content: space-between
+        justify-content: center
         align-items: center
-        .arrow
-            // background-color: red
-            display: flex
-            justify-content: center
-            align-items: center
         
+        > .staticArrow
+            transform: rotate(180deg) /* Counter-rotate the arrow to make it static */
     .menu
         max-width: 300px
         min-width: 200px

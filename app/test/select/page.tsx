@@ -6,7 +6,7 @@ export default function SelectPage() {
 	];
 	return (
 		<div className={styles.div}>
-			<Select {...{content: Content}}/>
+			<Select {...{content: Content, theme: 'dark', variant: 'default'}}/>
 		</div>
 	);
 }
