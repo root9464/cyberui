@@ -7,7 +7,7 @@ import {BiSolidDownArrow} from 'react-icons/bi';
 import {SelectUl} from './ul.components';
 import {type PropsSelect} from './types.select';
 import {useClassname} from '@/hooks/useClassname';
-export const Select = ({theme, variant, content}: PropsSelect) => {
+export const Select = ({theme, variant, content}: PropsSelect): JSX.Element => {
 	const className = styles.button;
 	const style = useClassname({theme, variant, paramClass: className}, styles);
 

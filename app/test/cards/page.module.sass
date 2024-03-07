@@ -1,0 +1,39 @@
+@import '../../../sass/mixins'
+    
+.div 
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 16px
+    width: 100%
+    padding: 100px
+    height: 100%
+    .box 
+        display: flex
+        flex-direction: column
+        gap: 100px
+    
+        .cards
+            border-radius: 10px
+            display: flex
+            flex-direction: column
+            gap: 16px
+            $n: 1
+
+            @for $i from 1 through 100
+                @if $i % 2 == $n
+                    &:nth-child(#{$i})
+                        background-color: #1E1E1E
+                @else
+                    &:nth-child(#{$i})
+                        background-color: #FFFFFF
+                        color: #000000
+
+            margin-top: 32px
+            overflow-y: auto
+            overflow-x: hidden
+            padding: 16px
+            width: 1000px
+            height: max-content
+       

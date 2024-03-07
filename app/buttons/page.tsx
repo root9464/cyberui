@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 
 import {Button} from '@/components/Button/button.ui';
 import styles from './page.module.sass';
@@ -7,27 +8,23 @@ export const metadata: Metadata = {
 	title: 'CyberUI - Buttons',
 };
 export default function ButtonsPage() {
+	const light = ['default', 'bordered', 'flat', 'outline', 'ghost'];
+	const dark = ['default', 'deep', 'deep-bordered', 'bordered', 'flat', 'outline', 'ghost'];
 	return (
 		<div className={styles.div}>
 			<p>buttons</p>
 			<div className={styles.boxButtons}>
 				<div className={styles.btns}>
 					<p>Light Theme</p>
-					<Button {...{theme: 'light', variant: 'default', text: 'CyberUI'} }/>
-					<Button {...{theme: 'light', variant: 'bordered', text: 'CyberUI'}} />
-					<Button {...{theme: 'light', variant: 'flat', text: 'CyberUI'}} />
-					<Button {...{theme: 'light', variant: 'outline', text: 'CyberUI'}} />
-					<Button {...{theme: 'light', variant: 'ghost', text: 'CyberUI'}} />
+					{light.map(item => (
+						<Button theme='light' variant={item} text='CyberUI' />
+					))}
 				</div>
 				<div className={styles.btns}>
 					<p>Dark Theme</p>
-					<Button theme='dark' variant='default' text='CyberUI' />
-					<Button theme='dark' variant='deep' text='CyberUI' />
-					<Button theme='dark' variant='deep-bordered' text='CyberUI' />
-					<Button theme='dark' variant='bordered' text='CyberUI' />
-					<Button theme='dark' variant='flat' text='CyberUI' />
-					<Button theme='dark' variant='outline' text='CyberUI' />
-					<Button theme='dark' variant='ghost' text='CyberUI' />
+					{dark.map(item => (
+						<Button theme='dark' variant={item} text='CyberUI' />
+					))}
 				</div>
 			</div>
 
