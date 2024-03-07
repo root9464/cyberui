@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 import {Card} from '@/components/Card/card.ui';
 import styles from './page.module.sass';
 import type {Metadata} from 'next';
@@ -17,7 +17,7 @@ export default function SelectPage() {
 					<p>dark theme</p>
 					{data.map(item => {
 						return (
-							<Card {...{theme: 'dark', variant: item, text: 'CyberUI'}}>
+							<Card {...{theme: 'dark', variant: item, text: 'CyberUI'}} key={item}>
 								<h1>zzzz</h1>
 								<p>ffff</p>
 							</Card>
@@ -28,7 +28,7 @@ export default function SelectPage() {
 					<p>light theme</p>
 					{light.map(item => {
 						return (
-							<Card {...{theme: 'light', variant: item, text: 'CyberUI'}}>
+							<Card {...{theme: 'light', variant: item, text: 'CyberUI'}} key={item}>
 								<h1>zzzz</h1>
 								<p>ffff</p>
 							</Card>
