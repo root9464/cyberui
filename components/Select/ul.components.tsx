@@ -2,67 +2,15 @@
 import {motion} from 'framer-motion';
 import styles from './select.module.sass';
 import {type PropsUl} from './types.select';
+import {useClassname} from '@/hooks/useClassname';
 export const SelectUl = ({itemVariants, isOpen, setIsOpen, setSelected, content, theme, variant}: PropsUl) => {
-	let className = styles.menu;
-	let classNameItem = styles.item;
-	switch (theme) {
-		case 'light':
-			className += ` ${styles.light}`;
-			classNameItem += ` ${styles.light}`;
-			switch (variant) {
-				case 'bordered':
-					className += ` ${styles.bordered}`;
-					break;
-				case 'flat':
-					className += ` ${styles.flat}`;
-					break;
-				case 'outline':
-					className += ` ${styles.outline}`;
-					break;
-				case 'ghost':
-					className += ` ${styles.ghost}`;
-					break;
-				default:
-					className += ` ${styles.default}`;
-			}
-
-			break;
-
-		case 'dark':
-			className += ` ${styles.dark}`;
-			classNameItem += ` ${styles.dark}`;
-			switch (variant) {
-				case 'deep':
-					className += ` ${styles.deep}`;
-					break;
-				case 'deep-bordered':
-					className += ` ${styles.deepBordered}`;
-					break;
-				case 'bordered':
-					className += ` ${styles.bordered}`;
-					break;
-				case 'flat':
-					className += ` ${styles.flat}`;
-					break;
-				case 'outline':
-					className += ` ${styles.outline}`;
-					break;
-				case 'ghost':
-					className += ` ${styles.ghost}`;
-					break;
-				default:
-					className += ` ${styles.default}`;
-			}
-
-			break;
-
-		default:
-			break;
-	}
-
+	const className = styles.menu;
+	const classNameItem = styles.item;
+	const styleUl = useClassname({theme, variant, paramClass: className}, styles);
+	const styleLi = useClassname({theme, variant, paramClass: classNameItem}, styles);
 	return (
 		<motion.ul
-			className={className}
+			className={styleUl}
 			variants={{
 				open: {
 					clipPath: 'inset(0% 0% 0% 0% round 10px)',
@@ -89,7 +37,7 @@ export const SelectUl = ({itemVariants, isOpen, setIsOpen, setSelected, content,
 				<motion.li
 
 					key={key}
-					className={classNameItem}
+					className={styleLi}
 					whileHover={{scale: 1.03}}
 					whileTap={{scale: 0.97}}
 					variants={itemVariants}
