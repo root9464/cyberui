@@ -14,13 +14,16 @@ export default function SelectPage() {
 			<p>selects</p>
 			<div className={styles.box}>
 				<div className={styles.selects}>
-					<p>Light Theme</p>
 					<Select {...{content: Content, theme: 'light', variant: 'default'}} />
-					<Select {...{content: Content, theme: 'light', variant: 'default'}}/>
+					<Select {...{content: Content, theme: 'light', variant: 'bordered'}}/>
+					<Select {...{content: Content, theme: 'light', variant: 'flat'}} />
 				</div>
 				<div className={styles.selects}>
-					<p>Dark Theme</p>
-					<Select {...{content: Content, theme: 'dark', variant: 'deep'}}/>
+					<Select {...{content: Content, theme: 'dark', variant: 'default'}} />
+					<Select {...{content: Content, theme: 'dark', variant: 'deep'}} />
+					<Select {...{content: Content, theme: 'dark', variant: 'deep-bordered'}} />
+					<Select {...{content: Content, theme: 'dark', variant: 'bordered'}}/>
+					<Select {...{content: Content, theme: 'dark', variant: 'flat'}} />
 				</div>
 			</div>
 		</div>
