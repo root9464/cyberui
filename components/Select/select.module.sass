@@ -8,13 +8,10 @@
     gap: 16px
     margin-top: 32px
     padding: 16px
-    // max-width: fit-content
-    // max-height: fit-content
-    // min-width: min-content
-    // min-height: min-content
-    width: 400px
-    height: 400px
-    background-color: red
+    max-width: fit-content
+    max-height: fit-content
+    min-width: min-content
+    min-height: min-content
     .arrow
         display: flex
         justify-content: center
@@ -31,26 +28,16 @@
         color: $color-theme-dark-text
         padding: 15px 20px
         сursor: pointer
-        border-radius: 3px
+        border-radius: 10px //!
         list-style-type: none
         user-select: none
         display: flex
         gap: 6px
         flex-direction: column
-           
         @include ThemeStyles(false)
 
         .item
             padding: 6px 10px
-            border-radius: 3px
+            border-radius: 5px
             transition: background-color 0.3s ease
-
-            &.dark 
-                 &:hover
-                    opacity: 0.95
-                    background-color: #282828
-
-            &.light
-                 &:hover
-                    opacity: 0.95
-                    background-color: #EAEAEA
+            @include ThemeStyles(true)

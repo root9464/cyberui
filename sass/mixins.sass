@@ -24,7 +24,7 @@
       background-color: $color-theme-light
     @if $hover == true
       &:hover
-        opacity: 0.95
+        // opacity: 0.95
         background-color: #EAEAEA
 
 
@@ -59,5 +59,51 @@
     
     @if $hover == true
       &:hover
-        opacity: 0.95
+        // opacity: 0.95
         background-color: #282828
+
+
+@mixin PageLayout($className, $directions)
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 16px
+  margin-top: 32px
+  overflow-y: auto
+  overflow-x: hidden
+  padding: 16px
+  width: 100%
+  height: 100%
+  
+  .box
+    display: grid
+    align-items: center
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    gap: 16px
+    margin-top: 32px
+    overflow-y: auto
+    overflow-x: hidden
+    padding: 16px
+    width: 100%
+    height: 100%
+    .#{$className}
+      display: flex
+      flex-direction: $directions
+      gap: 16px
+      align-items: center
+      justify-items: center
+      margin-top: 32px
+      overflow-y: auto
+      overflow-x: hidden
+      width: 100%
+      height: 100%
+      border-radius: 10px
+      $n: 1
+      @for $i from 1 through 100
+        @if $i % 2 == $n
+          &:nth-child(#{$i})
+              background-color: #1E1E1E
+        @else
+          &:nth-child(#{$i})
+              background-color: #FFFFFF
+              color: #000000
