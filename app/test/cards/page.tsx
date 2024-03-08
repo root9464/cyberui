@@ -6,7 +6,7 @@ import type {Metadata} from 'next';
 export const metadata: Metadata = {
 	title: 'CyberUI - Cards',
 };
-export default function SelectPage() {
+export default function CardPage() {
 	const data: string[] = ['default', 'deep', 'deep-bordered', 'bordered', 'flat', 'outline', 'ghost'];
 	const light: string[] = ['default', 'bordered', 'flat', 'outline', 'ghost'];
 	return (
