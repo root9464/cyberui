@@ -3,7 +3,7 @@ import {motion} from 'framer-motion';
 import styles from './select.module.sass';
 import {type PropsUl} from './types.select';
 import {useClassname} from '@/hooks/useClassname';
-export const SelectUl = ({itemVariants, isOpen, setIsOpen, setSelected, content, theme, variant}: PropsUl) => {
+export const SelectUl = ({itemVariants, isOpen, setIsOpen, setSelected, content, theme, variant}: PropsUl): JSX.Element => {
 	const className = styles.menu;
 	const classNameItem = styles.item;
 	const styleUl = useClassname({theme, variant, paramClass: className}, styles);

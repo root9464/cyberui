@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 import {useEffect, useRef, useState} from 'react';
 import styles from './carousel.module.sass';
 import Image, {type StaticImageData} from 'next/image';
-export const Carousel = ({img}: {img: StaticImageData[]}) => {
+export const Carousel = ({img}: {img: StaticImageData[]}): JSX.Element => {
 	const [width, setWidth] = useState<number>(0);
 	const carousel = useRef<HTMLDivElement>(null);
 	useEffect(() => {

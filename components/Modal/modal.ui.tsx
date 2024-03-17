@@ -12,7 +12,7 @@ import {Context, ModalProvider} from './provider.modal';
 import {ModalFooter} from './footer.modal';
 import {motion} from 'framer-motion';
 
-const ModalComponent = ({theme, variant, children, onClick}: ModalProps) => {
+const ModalComponent = ({theme, variant, children, onClick}: ModalProps): JSX.Element => {
 	const {open, Toggle}: TypeContext = use(Context);
 	const className = styles.modal;
 	const style = useClassname({theme, variant, paramClass: className}, styles);

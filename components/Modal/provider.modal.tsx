@@ -3,7 +3,7 @@ import {createContext, useState} from 'react';
 
 export const Context = createContext<any | undefined>(null);
 
-export const ModalProvider = ({children}: {children: React.ReactNode}) => {
+export const ModalProvider = ({children}: {children: React.ReactNode}): JSX.Element => {
 	const [open, setOpen] = useState<boolean>(false);
 	const Toggle = () => {
 		setOpen(prev => !prev);
