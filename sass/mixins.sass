@@ -134,7 +134,7 @@
       background-color: #282828
 
 
-@mixin PageLayout($className, $directions)
+@mixin PageLayout($className, $directions, $componentsWidth: fit-content, $componentsHeight: auto)
   display: flex
   flex-direction: column
   align-items: center
@@ -168,8 +168,8 @@
       margin-top: 32px
       overflow-y: auto
       overflow-x: hidden
-      width: fit-content
-      height: auto
+      width: $componentsWidth
+      height: $componentsHeight
       border-radius: 10px
       $n: 1
 

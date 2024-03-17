@@ -22,17 +22,19 @@ const ModalComponent = ({theme, variant, children, onClick}: ModalProps) => {
 			<Button text='Open modal' onClick={Toggle} theme={theme} variant={variant} />
 			{open
 				? (
-					<motion.div className={styles.container}>
+					<div className={styles.container}>
+						<div className={styles.blur}></div>
+
 						<motion.div className={style}
 							initial={{opacity: 0, scale: 0.5}}
 							animate={{opacity: 1, scale: 1}}
-							transition={{duration: 0.5, delay: 0.5, ease: [0, 0.71, 0.2, 1.01]}}>
+							transition={{duration: 0.3, delay: 0.5, ease: [0, 0.46, 0.26, 1.16]}}>
 
 							{children}
 
 							<ModalFooter {...{Toggle, onClick}} />
 						</motion.div>
-					</motion.div>
+					</div>
 				)
 				: (null)
 			}
