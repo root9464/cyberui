@@ -30,6 +30,11 @@
     &.default
       background-color: $color-theme-light
 
+    @include AdditionalThemeStyle('light')
+    
+
+
+
     @if $hover == true
       &:hover
         // opacity: 0.95
@@ -73,13 +78,16 @@
         
     &.default
       background-color: $color-theme-dark
-    
+
+
     @if $hover == true
       &:hover
         // opacity: 0.95
         background-color: #282828
 
-
+  
+  
+  
 @mixin ThemeStylesChild
   &.light
     color: $color-theme-light-text
@@ -175,3 +183,13 @@
           &:nth-child(#{$i})
               background-color: #FFFFFF
               color: #000000
+
+
+@mixin AdditionalThemeStyle($theme: null)
+  @if $theme == 'light'
+    &.red
+      color: $color-theme-dark-text
+      background-color: $color-theme-additional-red
+      &:hover
+        background-color: #DB1057
+  

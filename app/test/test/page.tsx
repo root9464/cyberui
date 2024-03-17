@@ -11,7 +11,9 @@ export default function ButtonsPage() {
 					<p>text</p>
 					<p>text</p>
 					<p>text</p>
-					<Modal />
+					<Modal {...{theme: 'light', variant: 'default', buttons: false}}>
+						<h2>text</h2>
+					</Modal>
 				</nav>
 			</header>
 			<Card theme='light' variant='default'>

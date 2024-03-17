@@ -1,42 +1,34 @@
-
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
-/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable react/no-children-prop */
 
 'use client';
 
-import {createContext, use, useState} from 'react';
+import {use} from 'react';
 import {Button} from '../Button/button.ui';
 import styles from './modal.module.sass';
-const Context = createContext<any | null>(null);
-type X = {
-	open: boolean;
-	Toggle: () => void;
-};
-const ModalProvider = ({children}: {children: React.ReactNode}) => {
-	const [open, setOpen] = useState<boolean>(false);
-	const Toggle = () => {
-		setOpen(prev => !prev);
-	};
+import {type ModalProps, type TypeContext} from './type.modal';
+import {useClassname} from '@/hooks/useClassname';
+import {Context, ModalProvider} from './provider.modal';
 
-	return (
-		<Context.Provider value={{open, Toggle}}>
-			{children}
-		</Context.Provider>
-	);
-};
+const ModalComponent = ({theme, variant, children, onClick, buttons}: ModalProps) => {
+	const {open, Toggle}: TypeContext = use(Context);
+	const className = styles.modal;
+	const style = useClassname({theme, variant, paramClass: className}, styles);
 
-const ModalComponent = () => {
-	const {open, Toggle}: X = use(Context);
-	console.log(open);
 	return (
 		<>
-			<Button text='Open modal' onClick={Toggle} theme='light' />
+			<Button text='Open modal' onClick={Toggle} theme={theme} variant={variant} />
 			{open
 				? (
-					<div className={styles.container}>
-						<div className={styles.modal}>
-							<Button text='Close modal' onClick={Toggle} theme='light' />
+					<div className={styles.container} >
+						<div className={style}>
+
+							{children}
+
+							<div className={styles.footer}>
+								<Button text='Close modal' onClick={Toggle} theme='light' variant='red'/>
+								<Button text='Event' onClick={onClick} theme='light' variant='default'/>
+							</div>
 						</div>
 					</div>
 				)
@@ -46,10 +38,10 @@ const ModalComponent = () => {
 	);
 };
 
-export const Modal = () => {
+export const Modal = ({theme, variant, children, onClick, buttons}: ModalProps) => {
 	return (
 		<ModalProvider>
-			<ModalComponent />
+			<ModalComponent theme={theme} variant={variant} children={children} onClick={onClick} buttons={buttons}/>
 		</ModalProvider>
 	);
 };

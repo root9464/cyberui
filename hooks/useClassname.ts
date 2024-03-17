@@ -31,6 +31,12 @@ export const useClassname = ({theme, variant, paramClass}: ClassName, styles: St
 					case 'ghost':
 						calculatedClassName += ` ${styles.ghost}`;
 						break;
+
+					// Additionals
+					case 'red':
+						calculatedClassName += ` ${styles.red}`;
+						break;
+
 					default:
 						calculatedClassName += ` ${styles.default}`;
 				}
