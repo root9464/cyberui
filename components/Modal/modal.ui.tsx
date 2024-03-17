@@ -9,8 +9,10 @@ import styles from './modal.module.sass';
 import {type ModalProps, type TypeContext} from './type.modal';
 import {useClassname} from '@/hooks/useClassname';
 import {Context, ModalProvider} from './provider.modal';
+import {ModalFooter} from './footer.modal';
+import {motion} from 'framer-motion';
 
-const ModalComponent = ({theme, variant, children, onClick, buttons}: ModalProps) => {
+const ModalComponent = ({theme, variant, children, onClick}: ModalProps) => {
 	const {open, Toggle}: TypeContext = use(Context);
 	const className = styles.modal;
 	const style = useClassname({theme, variant, paramClass: className}, styles);
@@ -20,17 +22,17 @@ const ModalComponent = ({theme, variant, children, onClick, buttons}: ModalProps
 			<Button text='Open modal' onClick={Toggle} theme={theme} variant={variant} />
 			{open
 				? (
-					<div className={styles.container} >
-						<div className={style}>
+					<motion.div className={styles.container}>
+						<motion.div className={style}
+							initial={{opacity: 0, scale: 0.5}}
+							animate={{opacity: 1, scale: 1}}
+							transition={{duration: 0.5, delay: 0.5, ease: [0, 0.71, 0.2, 1.01]}}>
 
 							{children}
 
-							<div className={styles.footer}>
-								<Button text='Close modal' onClick={Toggle} theme='light' variant='red'/>
-								<Button text='Event' onClick={onClick} theme='light' variant='default'/>
-							</div>
-						</div>
-					</div>
+							<ModalFooter {...{Toggle, onClick}} />
+						</motion.div>
+					</motion.div>
 				)
 				: (null)
 			}
@@ -38,10 +40,10 @@ const ModalComponent = ({theme, variant, children, onClick, buttons}: ModalProps
 	);
 };
 
-export const Modal = ({theme, variant, children, onClick, buttons}: ModalProps) => {
+export const Modal = ({theme, variant, children, onClick}: ModalProps) => {
 	return (
 		<ModalProvider>
-			<ModalComponent theme={theme} variant={variant} children={children} onClick={onClick} buttons={buttons}/>
+			<ModalComponent theme={theme} variant={variant} children={children} onClick={onClick}/>
 		</ModalProvider>
 	);
 };

@@ -4,10 +4,11 @@ export type ModalProps = {
 	variant?: string;
 	children: React.ReactNode;
 	onClick?: () => void;
-	buttons?: boolean;
 };
 
 export type TypeContext = {
 	open: boolean;
 	Toggle: () => void;
 };
+
+export type FooterModalProps = Pick<ModalProps, 'onClick'> & Pick<TypeContext, 'Toggle'>;

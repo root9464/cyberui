@@ -10,13 +10,15 @@
     max-height: 100vh
     backdrop-filter: blur(10px)
     position: absolute
-    z-index: 999
+    z-index: 1
     inset: 0
     .modal 
         position: fixed
         display: flex
+        flex-direction: column
+        gap: 22px
         top: calc( 100vh - 80% )
-        z-index: 999
+        z-index: 2
         overflow-y: auto
         overflow-x: hidden
         padding: 16px
@@ -24,16 +26,17 @@
         height: 500px
         border-radius: 16px
         @include ThemeStyles(false)
+        > p 
+            font-size: 20px
     .footer
         display: flex
         flex-direction: row
         align-items: center
         justify-content: flex-end
         width: 100%
-        padding: 6px 16px
-        gap: 10px
+        padding: 6px 16px 20px 16px
+        gap: 16px
         height: fit-content
-        background-color: #0400ff
         position: absolute
         top: -1
         bottom: 0

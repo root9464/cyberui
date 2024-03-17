@@ -11,8 +11,9 @@ export default function ButtonsPage() {
 					<p>text</p>
 					<p>text</p>
 					<p>text</p>
-					<Modal {...{theme: 'light', variant: 'default', buttons: false}}>
+					<Modal {...{theme: 'light', variant: 'bordered', buttons: false}}>
 						<h2>text</h2>
+						<p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis similique voluptatem molestiae dolores vitae iure consequuntur nihil porro architecto debitis reiciendis dignissimos pariatur optio facilis vero, provident exercitationem ex beatae!</p>
 					</Modal>
 				</nav>
 			</header>
