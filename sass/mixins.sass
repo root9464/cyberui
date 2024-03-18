@@ -6,6 +6,9 @@
     &.bordered
       background-color: $color-theme-light
       border: 2px solid $color-theme-light-border
+      &:hover
+        background-color: $color-theme-light-border
+        transition: background-color 0.45s ease-out
 
     &.flat
       background-color: $color-theme-light-flat
@@ -19,6 +22,7 @@
       &:hover
         background-color: $color-theme-light
         color: $color-theme-light-text
+        transition: background-color 0.45s ease-out
 
     &.ghost
       background: rgba(255, 255, 255, 0)
@@ -26,6 +30,7 @@
 
       &:hover
         background-color: #963A8D
+        transition: background-color 0.45s ease-out
 
     &.default
       background-color: $color-theme-light
@@ -38,7 +43,8 @@
     @if $hover == true
       &:hover
         // opacity: 0.95
-        background-color: #EAEAEA
+        background-color: #CCCCCC
+        transition: background-color 0.45s ease-out
 
 
   &.dark
@@ -54,6 +60,9 @@
     &.bordered
       background-color: $color-theme-dark
       border: 2px solid $color-theme-dark-border
+      &:hover
+        background-color: $color-theme-dark-border
+        transition: background-color 0.45s ease-out
 
     &.flat
       background-color: $color-theme-dark-flat
@@ -67,6 +76,7 @@
       &:hover
         background-color: $color-theme-dark
         color: $color-theme-dark-text
+        transition: background-color 0.45s ease-out
 
     &.ghost
       background: rgba(255, 255, 255, 0)
@@ -75,16 +85,20 @@
       &:hover
         background-color: $color-theme-dark-ghost
         color: $color-theme-dark-text
+        transition: background-color 0.45s ease-out
+
         
     &.default
       background-color: $color-theme-dark
 
-    @include AdditionalThemeStyle('dark')
-
     @if $hover == true
       &:hover
         // opacity: 0.95
-        background-color: #282828
+        background-color: #3C3C3C
+        transition: background-color 0.45s ease-out
+
+
+    @include AdditionalThemeStyle('dark')
 
   
   
