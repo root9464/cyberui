@@ -6,7 +6,9 @@
     &.bordered
       background-color: $color-theme-light
       border: 2px solid $color-theme-light-border
-      &:hover
+
+      @if $hover == true
+       &:hover
         background-color: $color-theme-light-border
         transition: background-color 0.45s ease-out
 
@@ -60,9 +62,11 @@
     &.bordered
       background-color: $color-theme-dark
       border: 2px solid $color-theme-dark-border
-      &:hover
-        background-color: $color-theme-dark-border
-        transition: background-color 0.45s ease-out
+      
+      @if $hover == true
+        &:hover
+          background-color: $color-theme-dark-border
+          transition: background-color 0.45s ease-out
 
     &.flat
       background-color: $color-theme-dark-flat
