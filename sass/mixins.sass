@@ -79,6 +79,7 @@
     &.default
       background-color: $color-theme-dark
 
+    @include AdditionalThemeStyle('dark')
 
     @if $hover == true
       &:hover
@@ -188,8 +189,18 @@
 @mixin AdditionalThemeStyle($theme: null)
   @if $theme == 'light'
     &.red
-      color: $color-theme-dark-text
-      background-color: $color-theme-additional-red
+      color: #E91E65
+      background-color: rgba(0, 0, 0, 0)
       &:hover
-        background-color: #DB1057
+        //background-color: #DB1057
+        background-color: rgba(253, 208, 223, 0.71)
+        transition: background-color 0.45s ease-out
+  @if $theme == 'dark'
+    &.red
+      color: #E91E65
+      background-color: rgba(0, 0, 0, 0)
+      &:hover
+        //background-color: #DB1057
+        background-color: rgba(125, 42, 84, 0.71)
+        transition: background-color 0.45s ease-out
   

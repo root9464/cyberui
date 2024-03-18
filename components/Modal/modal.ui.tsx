@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 /* eslint-disable react/no-children-prop */
 
 'use client';
@@ -13,13 +13,13 @@ import {ModalFooter} from './footer.modal';
 import {motion} from 'framer-motion';
 
 const ModalComponent = ({theme, variant, children, onClick}: ModalProps): JSX.Element => {
-	const {open, Toggle}: TypeContext = use(Context);
+	const {open, onToggle} = use<TypeContext>(Context);
 	const className = styles.modal;
 	const style = useClassname({theme, variant, paramClass: className}, styles);
 
 	return (
 		<>
-			<Button text='Open modal' onClick={Toggle} theme={theme} variant={variant} />
+			<Button text='Open modal' onClick={onToggle} theme={theme} variant={variant} />
 			{open
 				? (
 					<div className={styles.container}>
@@ -32,7 +32,9 @@ const ModalComponent = ({theme, variant, children, onClick}: ModalProps): JSX.El
 
 							{children}
 
-							<ModalFooter {...{Toggle, onClick}} />
+							<ModalFooter {...{
+								onToggle, onClick, theme, variant,
+							}} />
 						</motion.div>
 					</div>
 				)

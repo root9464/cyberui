@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+
 export type ModalProps = {
 	theme: string;
 	variant?: string;
@@ -8,7 +8,13 @@ export type ModalProps = {
 
 export type TypeContext = {
 	open: boolean;
-	Toggle: () => void;
+	onToggle: () => void;
 };
 
-export type FooterModalProps = Pick<ModalProps, 'onClick'> & Pick<TypeContext, 'Toggle'>;
+// Export type FooterModalProps = Pick<ModalProps, 'onClick'> & Pick<TypeContext, 'onToggle'>;
+export type FooterModalProps = {
+	onToggle: () => void;
+	onClick?: () => void;
+	theme: string;
+	variant?: string;
+};
