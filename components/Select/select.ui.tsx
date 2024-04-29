@@ -1,12 +1,12 @@
 
 'use client';
+import {useClassname} from '@/hooks/useClassname';
 import {type Variants, motion} from 'framer-motion';
 import {useState} from 'react';
-import styles from './select.module.sass';
 import {BiSolidDownArrow} from 'react-icons/bi';
-import {SelectUl} from './ul.components';
+import styles from './select.module.sass';
 import {type PropsSelect} from './types.select';
-import {useClassname} from '@/hooks/useClassname';
+import {SelectUl} from './ul.components';
 export const Select = ({theme, variant, content}: PropsSelect): JSX.Element => {
 	const className = styles.button;
 	const style = useClassname({theme, variant, paramClass: className}, styles);

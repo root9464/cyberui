@@ -1,12 +1,16 @@
 
 /* eslint-disable no-mixed-operators */
 'use client';
-import {useRef, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
-import styles from './page.module.sass';
 import Image from 'next/image';
+import {useRef, useState} from 'react';
+import styles from './page.module.sass';
 import {
-	type MouseEventWithElement, type Direction, type Params, type EventMouse, type Variants,
+	type Direction,
+	type EventMouse,
+	type MouseEventWithElement,
+	type Params,
+	type Variants,
 } from './type.dh';
 export const DirectionAwareHover = ({children, url}: Params): JSX.Element => {
 	const ref = useRef<HTMLDivElement>(null);

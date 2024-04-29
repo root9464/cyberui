@@ -30,11 +30,11 @@ export const Card = ({theme, variant, children}: CardProps): JSX.Element => {
     const style = useClassname({theme, variant, paramClass: className}, styles);
     return (
         <motion.div style={{perspective: 800}} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} className={styles.container}>
-                <motion.div className={styles.innermotiondiv} transition={{velocity: 0}} style={{rotateX, rotateY}}>
-                        <motion.div style={{cardRotateX, cardRotateY} as CustomMotionStyle} transition={{velocity: 0}} key='card' className={style}>
-                                {children}
-                        </motion.div>
+            <motion.div className={styles.innermotiondiv} transition={{velocity: 0}} style={{rotateX, rotateY}}>
+                <motion.div style={{cardRotateX, cardRotateY} as CustomMotionStyle} transition={{velocity: 0}} key='card' className={style}>
+                    {children}
                 </motion.div>
+            </motion.div>
         </motion.div>
       );
 };
