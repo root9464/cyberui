@@ -2,10 +2,10 @@
 /* eslint-disable react/display-name */
 
 'use client';
-import {type ButtonProps} from './type.button';
-import styles from './button.module.sass';
-import {memo} from 'react';
 import {useClassname} from '@/hooks/useClassname';
+import {memo} from 'react';
+import styles from './button.module.sass';
+import {type ButtonProps} from './type.button';
 
 export const Button = memo(
 	({theme, variant, text, onClick, ...props}: ButtonProps): JSX.Element => {

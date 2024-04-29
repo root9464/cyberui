@@ -2,11 +2,11 @@
 /* eslint-disable @typescript-eslint/indent */
 /* eslint-disable no-mixed-operators */
 'use client';
+import {useClassname} from '@/hooks/useClassname';
 import {motion, useMotionValue, useTransform} from 'framer-motion';
 import {type MouseEventHandler} from 'react';
 import styles from './card.module.sass';
-import {type CustomMotionStyle, type CardProps} from './type.card';
-import {useClassname} from '@/hooks/useClassname';
+import {type CardProps, type CustomMotionStyle} from './type.card';
 export const Card = ({theme, variant, children}: CardProps): JSX.Element => {
 	const cardX = useMotionValue(0);
 	const cardY = useMotionValue(0);

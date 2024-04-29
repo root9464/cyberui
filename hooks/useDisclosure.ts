@@ -3,9 +3,9 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 /* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 
-import {useCallbackRef} from './useCallbackRef';
 import type React from 'react';
-import {useCallback, useState, useId} from 'react';
+import {useCallback, useId, useState} from 'react';
+import {useCallbackRef} from './useCallbackRef';
 
 export type UseDisclosureProps = {
 	open?: boolean;
