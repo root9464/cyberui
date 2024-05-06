@@ -1,7 +1,7 @@
 
 import {Card} from '@/components/Card/card.ui';
-import styles from './page.module.sass';
 import type {Metadata} from 'next';
+import styles from './page.module.sass';
 
 export const metadata: Metadata = {
 	title: 'CyberUI - Cards',

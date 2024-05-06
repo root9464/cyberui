@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-key */
 
 import {Button} from '@/components/Button/button.ui';
-import styles from './page.module.sass';
 import type {Metadata} from 'next';
+import styles from './page.module.sass';
 
 export const metadata: Metadata = {
 	title: 'CyberUI - Buttons',
